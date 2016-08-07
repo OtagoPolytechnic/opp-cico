@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   resources :items
   resources :item_types
   # The priority is based upon order of creation: first created -> highest priority.
