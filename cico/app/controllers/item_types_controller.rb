@@ -19,6 +19,7 @@ class ItemTypesController < ApplicationController
 
   # GET /item_types/1/edit
   def edit
+    @item_types = ItemType.all
   end
 
   # POST /item_types
@@ -48,16 +49,6 @@ class ItemTypesController < ApplicationController
         format.html { render :edit }
         format.json { render json: @item_type.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /item_types/1
-  # DELETE /item_types/1.json
-  def destroy
-    @item_type.destroy
-    respond_to do |format|
-      format.html { redirect_to item_types_url, notice: 'Item type was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
