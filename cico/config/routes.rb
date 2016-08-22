@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :check_outs
   resources :users
   resources :items
   resources :item_types
