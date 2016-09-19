@@ -1,4 +1,4 @@
-set :stage, production
+set :stage, :production
 server '54.206.20.102', user: 'cico', roles: %w{web app}
 
 # server-based syntax
