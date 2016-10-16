@@ -3,7 +3,7 @@ class CreateItemTypes < ActiveRecord::Migration
   def up
     create_table :item_types do |t|
       t.string :name, :limit => 50, :null => false
-      t.text :description, :null => false
+      t.text :description, :limit => 255, :null => false
       t.text :notes, :null => true
       t.date :retired_at, :null => true
 
