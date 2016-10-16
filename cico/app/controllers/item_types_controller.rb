@@ -52,6 +52,10 @@ class ItemTypesController < ApplicationController
     end
   end
 
+  def retire
+    @item_type = set_item_type
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item_type

@@ -1,22 +1,28 @@
 <h1>Listing Item Types</h1>
 
-<table>
-<% @item_types.each do |item_type| %>
-  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-    <td class="list_description">
-      <dl>
-        <dt><%= item_type.name %></dt>
-        <dd><%= truncate(strip_tags(item_type.description), length: 80) %></dd>
-        <dd><%= item_type.notes %></dd>
-        <td><%= item_type.retired_at %></td>
-      </dl>
-    </td>
-    <td class="list_actions">
-      <%= link_to 'Show', item_type %><br/>
-      <%= link_to 'Edit', edit_item_type_path(item_type) %><br/>
-    </td>
-  </tr>
-<% end %>
+<table class="listing" summary="Item type list">
+    <tr class="header">
+      <th>&nbsp;</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Notes</th>
+      <th>Retired at?</th>
+      <th>Actions</th>
+    </tr>
+    <% @item_types.each do |item_type| %>
+    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+      <td><%= item_type.id %></td>
+      <td><%= item_type.name %></td>
+      <td><%= item_type.description %></td>
+      <td><%= item_type.notes %></td>
+      <td><%= item_type.retired_at %></td>
+      <td class="actions">
+        <%= link_to("Show", item_type) %>
+        <%= link_to("Edit", edit_item_type_path(item_type)) %>
+        <%= link_to("Retire", {:action => 'retire', :id => item_type.id}) %>
+      </td>
+    </tr>
+    <% end %>
 </table>
 <br />
 

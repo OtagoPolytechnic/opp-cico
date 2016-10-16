@@ -1,0 +1,12 @@
+<%= form_for(@item_type) do |f| %>
+  
+  <div class="field">
+    <%= f.label :retired_at %><br>
+    <%= f.datetime_select :retired_at %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+<% end %>
