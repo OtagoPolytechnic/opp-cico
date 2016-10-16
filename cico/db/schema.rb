@@ -47,11 +47,13 @@ ActiveRecord::Schema.define(version: 20160819033134) do
   add_index "items", ["item_type_id"], name: "index_items_on_item_type_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",   limit: 30, null: false
-    t.string   "password",   limit: 30, null: false
-    t.string   "email",      limit: 50, null: false
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.string   "first_name",      limit: 25, null: false
+    t.string   "last_name",       limit: 25, null: false
+    t.string   "username",        limit: 25, null: false
+    t.string   "password_digest",            null: false
+    t.string   "email",           limit: 50, null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
 end
