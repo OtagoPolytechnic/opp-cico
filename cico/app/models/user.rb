@@ -18,8 +18,10 @@ class User < ActiveRecord::Base
 	validates_length_of :username, :within => 5..25
 	validates_uniqueness_of :username
 
-	validates_presence_of :password
 	validates_length_of :password, :maximum => 25
+
+	validates_presence_of :password_confirmation
+	validates_length_of :password_confirmation, :maximum => 25
 
 	validates_presence_of :email
 	validates_length_of :email, :maximum => 50
