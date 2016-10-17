@@ -6,9 +6,24 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class='<%= controller.controller_name %>'>
+	<body class='<%= controller.controller_name %>'>
 
-<%= yield %>
+	<header class='main_header'>
+		<h1 class='main_title'>Check In Check Out (CICO)</h1>
+	</header>
 
-</body>
+	<nav class='main_nav'>
+		<h2 class='main_nav_header'>Contents</h2>
+		<ul>
+			<li><%= link_to("Item types", :controller => "item_types", :action => "index") %></li>
+			<li><%= link_to("Items", :controller => "items", :action => "index") %><br /></li>
+			<li><%= link_to("Users", :controller => "users", :action => "index") %><br /></li>
+		</ul>
+	</nav>
+
+	<div class='main_content'>
+		<%= yield %>
+	</div>
+
+	</body>
 </html>
