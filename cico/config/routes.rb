@@ -4,13 +4,11 @@ Rails.application.routes.draw do
   resources :items
   resources :item_types
   
-  get "/pages/:page" => "pages#show"
-  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root "pages#show", page: "home"
+  root "pages#index", page: "home"
 
   #get 'demo/index'
   match ':controller(/:action(/:id))', :via => [:get, :post]
