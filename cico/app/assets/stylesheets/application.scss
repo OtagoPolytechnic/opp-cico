@@ -15,18 +15,16 @@
 //Custom bootstrap variables must be set or imported before bootstrap itself.
 
 //Imports
-@import "variables";	//Holds all variables
-@import "bootstrap";	//Bootstrap
-@import "mixins";		//Holds all mixins
+@import "bootstrap-sprockets";	//Required for bootstrap
+@import "bootstrap";			//Bootstrap
+
+@import "variables";			//Holds all variables
+@import "mixins";				//Holds all mixins
 @import "base";
 
 @import "modules/scaffolds";	//Scaffold styles
-@import "modules/navigation";	//Navigation styles
 @import "modules/table";
 @import "modules/item_types";
 @import "modules/items";
 @import "modules/users";
 @import "modules/check_outs";
-
-
- 

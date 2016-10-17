@@ -1,8 +1,5 @@
 class User < ActiveRecord::Base
 
-	# Used for the bcrypt gem
-	has_secure_password
-
 	has_many :check_outs
 
 	# Validatons
@@ -19,6 +16,10 @@ class User < ActiveRecord::Base
 	validates_uniqueness_of :username
 
 	validates_length_of :password, :maximum => 25
+
+	#I would normally put this at the top but the error appears in the list nicer
+	# Used for the bcrypt gem
+	has_secure_password
 
 	validates_presence_of :password_confirmation
 	validates_length_of :password_confirmation, :maximum => 25

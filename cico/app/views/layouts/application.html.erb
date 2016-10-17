@@ -1,29 +1,70 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Cico</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
+	<head><meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Cico</title>
+	  	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	   <!--[if lt IE 9]>
+	   	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	   	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	   <![endif]-->
+	   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	   <%= csrf_meta_tags %>
+	</head>
 	<body class='<%= controller.controller_name %>'>
 
-	<header class='main_header'>
-		<h1 class='main_title'>Check In Check Out (CICO)</h1>
-	</header>
+		<!-- Navigation -->
+	    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	        <div class="container">
+	            <!-- Brand and toggle get grouped for better mobile display -->
+	            <div class="navbar-header">
+	                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	                    <span class="sr-only">Toggle navigation</span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                </button>
+	                <%= link_to("Check In Check Out (CICO)", { :controller => "pages", :action => "index" }, :class => "navbar-brand title") %>
+	            </div>
+	            <!-- Collect the nav links, forms, and other content for toggling -->
+	            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	                <ul class="nav navbar-nav navbar-right">
+	                    <li>
+	                        <%= link_to("My Items", { :controller => "my_items", :action => "index" }) %>
+	                    </li>
+	                    <li>
+	                        <%= link_to("Manage Content", { :controller => "pages", :action => "content" }) %>
+	                    </li>
+	                    <li>
+	                        <%= link_to("Logout", { :controller => "access", :action => "logout" }) %>
+	                    </li>
+	                </ul>
+	            </div>
+	            <!-- /.navbar-collapse -->
+	        </div>
+	        <!-- /.container -->
+		</nav>
 
-	<nav class='main_nav'>
-		<h2 class='main_nav_header'>Contents</h2>
-		<ul>
-			<li><%= link_to("Item types", :controller => "item_types", :action => "index") %></li>
-			<li><%= link_to("Items", :controller => "items", :action => "index") %><br /></li>
-			<li><%= link_to("Users", :controller => "users", :action => "index") %><br /></li>
-		</ul>
-	</nav>
+		<div class='main_content'>
+			<%= yield %>
+		</div>
 
-	<div class='main_content'>
-		<%= yield %>
-	</div>
+		<div class="container">
+		  <div class="row">
+		  <hr>
+		    <div class="col-lg-12">
+		      <div class="col-md-8">
+		        <a href="#">Terms of Service</a> | <a href="#">Privacy</a>    
+		      </div>
+		      <div class="col-md-4">
+		        <p class="muted pull-right">© 2013 Company Name. All rights reserved</p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 
 	</body>
 </html>
