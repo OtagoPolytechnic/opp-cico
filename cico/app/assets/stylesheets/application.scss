@@ -10,34 +10,23 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_self
- *= require_tree .
  */
 
- .main_header {
- 	width: 100%;
- 	height: 100px;
- 	background: blue;
- }
+//Custom bootstrap variables must be set or imported before bootstrap itself.
 
- .main_title {
- 	padding-left: 25px;
- 	padding-top: 35px;
- }
+//Imports
+@import "variables";	//Holds all variables
+@import "bootstrap";	//Bootstrap
+@import "mixins";		//Holds all mixins
+@import "base";
 
- .main_nav {
- 	float: left;
- 	width: 200px;
- 	height: 700px;
- 	list-style: none;
- 	background: red;
- }
+@import "modules/scaffolds";	//Scaffold styles
+@import "modules/navigation";	//Navigation styles
+@import "modules/table";
+@import "modules/item_types";
+@import "modules/items";
+@import "modules/users";
+@import "modules/check_outs";
 
- .main_nav_header {
- 	padding-left: 25px;
- }
 
- .main_content {
- 	float: left;
- 	padding: 50px;
- }
+ 
