@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'access/login'
+
   resources :check_outs
   resources :users
   resources :items
