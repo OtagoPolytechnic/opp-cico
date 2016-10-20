@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  # Checked logged in
+  before_action :confirm_logged_in
+
   private
 
   def confirm_logged_in

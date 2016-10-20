@@ -1,6 +1,5 @@
 class ItemTypesController < ApplicationController
   
-  before_action :confirm_logged_in
   before_action :set_item_type, only: [:show, :edit, :update, :destroy]
 
   # GET /item_types
