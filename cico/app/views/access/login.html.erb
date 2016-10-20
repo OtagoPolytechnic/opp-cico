@@ -1,0 +1,16 @@
+<div class="form">
+<h1>Welcome to Cico</h1>
+	<% if !flash[:notice].blank? %>
+        <div class="login-errors">
+          <%= flash[:notice] %>
+        </div>
+    <% end %>
+  <%= form_tag({:action => 'attempt_login'}, class: "login-form") do %>
+    
+    <%= text_field_tag(:username, nil, :placeholder => "username") %>
+
+    <%= password_field_tag(:password, nil, :placeholder => "password") %>
+    
+    <%= submit_tag("Log In") %>
+  <% end %>
+</div>
