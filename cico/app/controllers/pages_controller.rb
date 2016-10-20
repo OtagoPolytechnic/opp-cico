@@ -4,4 +4,8 @@ class PagesController < ApplicationController
 		render('home')
     end
 
+    def my_items
+    	render('my_items')
+    end
+
 end
