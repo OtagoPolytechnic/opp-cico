@@ -19,4 +19,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def confirm_admin
+    unless session[:admin]
+      flash[:notice] = "Sorry you are not an admin"
+      redirect_to(:controller => 'pages', :action => 'index')
+      return false # halts the before_action
+    else
+      return true
+    end
+  end
+
 end

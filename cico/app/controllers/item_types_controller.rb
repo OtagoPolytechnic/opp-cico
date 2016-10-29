@@ -1,5 +1,7 @@
 class ItemTypesController < ApplicationController
   
+  # Check the user is an admin
+  before_action :confirm_admin
   before_action :set_item_type, only: [:show, :edit, :update, :destroy]
 
   # GET /item_types

@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   
+  # Check the user is an admin
+  before_action :confirm_admin
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   # GET /items

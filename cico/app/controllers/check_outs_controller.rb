@@ -1,5 +1,7 @@
 class CheckOutsController < ApplicationController
   
+  # Check the user is an admin
+  before_action :confirm_admin
   before_action :set_check_out, only: [:show, :edit, :update, :destroy]
 
   # GET /check_outs
