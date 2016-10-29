@@ -11,9 +11,9 @@ end
 #------------------------------------------------------------------
 
 user_list = [
-	[ "Bob", "Smith", "BobSmith", "testpassword", "testpassword", "Bob@email.co.nz" ]
+	[ "Bob", "Smith", "BobSmith", "testpassword", "testpassword", "Bob@email.co.nz", "true"]
 ]
 
-user_list.each do |first_name, last_name, username, password, password_confirmation, email|
-	User.create( first_name: first_name, last_name: last_name, username: username, password: password, password_confirmation: password_confirmation, email: email)
+user_list.each do |first_name, last_name, username, password, password_confirmation, email, admin|
+	User.create( first_name: first_name, last_name: last_name, username: username, password: password, password_confirmation: password_confirmation, email: email, admin: admin)
 end

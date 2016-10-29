@@ -35,9 +35,13 @@
 	                    <li>
 	                        <%= link_to("My Items", { :controller => "pages", :action => "my_items" }) %>
 	                    </li>
-	                    <li>
-	                        <%= link_to("Manage Content", { :controller => "pages", :action => "content" }) %>
-	                    </li>
+
+	                    <% if(session[:admin] == true) %>
+	                    	<li>
+		                        <%= link_to("Manage Content", { :controller => "pages", :action => "content" }) %>
+		                    </li>
+		                <% end %>             
+
 	                    <li>
 	                        <%= link_to("Logout", { :controller => "access", :action => "logout" }) %>
 	                    </li>
@@ -49,14 +53,8 @@
 		</nav>
 
 		<!-- Content -->
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-1"></div>
-				<div class="col-lg-10">
-					<%= yield %>
-				</div>
-				<div class="col-lg-1"></div>
-			</div>
+		<div class="container main-container">
+			<%= yield %>
 		</div>
 
 		<!-- Footer -->
