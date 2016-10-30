@@ -37,8 +37,17 @@ div {
   }
 }
 
+.notice-container { 
+  padding: 5px; 
+  text-align: center;
+  background: #B6D491;
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+}
+
 #notice {
-  color: green;
+  color: black;
+  font-size: 14px;
 }
 
 .field_with_errors {

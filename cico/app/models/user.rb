@@ -27,4 +27,5 @@ class User < ActiveRecord::Base
 	validates_presence_of :email
 	validates_length_of :email, :maximum => 50
 	validates_format_of :email, :with => EMAIL_REGEX
+	
 end
