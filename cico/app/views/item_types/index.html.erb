@@ -21,10 +21,10 @@
         <td><%= item_type.notes %></td>
         <td><%= item_type.retired_at %></td>
         <td class="actions">
-        <%= link_to("Show", item_type) %>
-        <%= link_to("Edit", edit_item_type_path(item_type)) %>
-        <%= link_to('Retire') %>
-      </td>
+          <%= link_to("Show", item_type) %>
+          <%= link_to("Edit", edit_item_type_path(item_type)) %>
+          <%= link_to('Retire') %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New item type', new_item_type_path, :class => "btn btn-success" %>
+<%= link_to 'New item type', new_item_type_path, class: 'btn btn-success' %>

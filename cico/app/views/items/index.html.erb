@@ -23,10 +23,10 @@
         <td><%= item.notes %></td>
         <td><%= item.retired_at %></td>
         <td class="actions">
-        <%= link_to("Show", item) %>
-        <%= link_to("Edit", edit_item_path(item)) %>
-        <%= link_to('Retire') %>
-      </td>
+          <%= link_to("Show", item) %>
+          <%= link_to("Edit", edit_item_path(item)) %>
+          <%= link_to('Retire') %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Item', new_item_path, :class => "btn btn-success"%>
+<%= link_to 'New Item', new_item_path, class: 'btn btn-success' %>
