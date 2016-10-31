@@ -21,7 +21,7 @@ class AccessController < ApplicationController
       session[:username] = authorized_user.username
       session[:admin] = authorized_user.admin
       flash[:success] = "You are now logged in."
-      redirect_to(:controller => 'pages' ,:action => 'index')
+      redirect_to(:controller => 'pages' ,:action => 'my_items')
     else
       flash[:error] = "Invalid username/password combination."
       redirect_to(:action => 'login')
