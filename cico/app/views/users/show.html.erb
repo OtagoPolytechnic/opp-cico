@@ -1,22 +1,36 @@
-<p>
-  <strong>First Name:</strong>
-  <%= @user.first_name %>
-</p>
+<h1><%= @user.username %></h1>
 
-<p>
-  <strong>Last Name:</strong>
-  <%= @user.last_name %>
-</p>
+<table>
+  <thead>
+    <tr>
+      <th>User Data</th>
+      <th>Details</th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+  <tbody>
+      <tr>
+        <td>ID:</td>
+        <td><%= @user.id %></td>
+      </tr>
+      <tr>
+        <td>First name:</td>
+        <td><%= @user.first_name %></td>
+      </tr>
+      <tr>
+        <td>Last name:</td>
+        <td><%= @user.last_name %></td>
+      </tr>
+      <tr>
+        <td>Username:</td>
+        <td><%= @user.username %></td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td><%= @user.email %></td>
+      </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit', edit_user_path(@user), :class => "btn btn-success" %>
+<%= link_to 'Back', users_path, :class => "btn btn-success" %>

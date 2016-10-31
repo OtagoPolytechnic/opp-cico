@@ -1,22 +1,36 @@
-<p>
-  <strong>Name:</strong>
-  <%= @item_type. name %>
-</p>
+<h1><%= @item_type.name %></h1>
 
-<p>
-  <strong>Description:</strong>
-  <%= @item_type.description %>
-</p>
+<table>
+  <thead>
+    <tr>
+      <th>Item Type Data</th>
+      <th>Details</th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Notes:</strong>
-  <%= @item_type.notes %>
-</p>
+  <tbody>
+      <tr>
+        <td>ID:</td>
+        <td><%= @item_type.id %></td>
+      </tr>
+      <tr>
+        <td>Name:</td>
+        <td><%= @item_type.name %></td>
+      </tr>
+      <tr>
+        <td>Description:</td>
+        <td><%= @item_type.description %></td>
+      </tr>
+      <tr>
+        <td>Notes:</td>
+        <td><%= @item_type.notes %></td>
+      </tr>
+      <tr>
+        <td>Retired at:</td>
+        <td><%= @item_type.retired_at %></td>
+      </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Retired at:</strong>
-  <%= @item_type.retired_at %>
-</p>
-
-<%= link_to 'Edit', edit_item_type_path(@item_type) %> |
-<%= link_to 'Back', item_types_path %>
+<%= link_to 'Edit', edit_item_type_path(@item_type), :class => "btn btn-success" %>
+<%= link_to 'Back', item_types_path, :class => "btn btn-success" %>

@@ -1,27 +1,40 @@
-<p>
-  <strong> name:</strong>
-  <%= @item. name %>
-</p>
+<h1><%= @item.name %></h1>
 
-<p>
-  <strong>Price:</strong>
-  <%= @item.price %>
-</p>
+<table>
+  <thead>
+    <tr>
+      <th>Item Data</th>
+      <th>Details</th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Asset num:</strong>
-  <%= @item.asset_num %>
-</p>
+  <tbody>
+      <tr>
+        <td>ID:</td>
+        <td><%= @item.id %></td>
+      </tr>
+      <tr>
+        <td>Name:</td>
+        <td><%= @item.name %></td>
+      </tr>
+      <tr>
+        <td>Price:</td>
+        <td><%= @item.price %></td>
+      </tr>
+      <tr>
+        <td>Asset num:</td>
+        <td><%= @item.asset_num %></td>
+      </tr>
+      <tr>
+        <td>Notes:</td>
+        <td><%= @item.notes %></td>
+      </tr>
+      <tr>
+        <td>Retired at:</td>
+        <td><%= @item.retired_at %></td>
+      </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Notes:</strong>
-  <%= @item.notes %>
-</p>
-
-<p>
-  <strong>Retired at:</strong>
-  <%= @item.retired_at %>
-</p>
-
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<%= link_to 'Edit', edit_item_path(@item), :class => "btn btn-success" %>
+<%= link_to 'Back', items_path, :class => "btn btn-success" %>

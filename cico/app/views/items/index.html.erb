@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Name</th>
       <th>Price</th>
       <th>Asset num</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
+        <td><%= item.id %></td>
         <td><%= item.name %></td>
         <td><%= item.price %></td>
         <td><%= item.asset_num %></td>
@@ -23,7 +25,7 @@
         <td class="actions">
         <%= link_to("Show", item) %>
         <%= link_to("Edit", edit_item_path(item)) %>
-        <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to('Retire') %>
       </td>
       </tr>
     <% end %>
@@ -32,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Item', new_item_path %>
+<%= link_to 'New Item', new_item_path, :class => "btn btn-success"%>
