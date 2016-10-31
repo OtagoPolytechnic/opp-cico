@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 
-
 table {
   border-collapse: separate;
   background: #fff;
@@ -67,16 +66,20 @@ tbody tr:nth-child(2n) {
 tbody tr:last-child td {
   border-bottom: none;
 }
+
 tbody tr:last-child td:first-child {
   -moz-border-radius-bottomleft: 5px;
   -webkit-border-bottom-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
+
 tbody tr:last-child td:last-child {
   -moz-border-radius-bottomright: 5px;
   -webkit-border-bottom-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+
+/*
 tbody:hover > tr:hover td {
   text-shadow: none;
   font-weight: bold;
@@ -84,3 +87,4 @@ tbody:hover > tr:hover td {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
+*/
