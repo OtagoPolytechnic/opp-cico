@@ -5,7 +5,10 @@ class PagesController < ApplicationController
     end
 
     def my_items
-    	render('my_items')
+
+    end
+
+    def manage_content
     end
 
 end
