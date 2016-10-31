@@ -20,8 +20,8 @@ class ApplicationController < ActionController::Base
   end
 
   def confirm_admin
-    if (session[:admin] != true)
-      flash[:notice] = "Sorry you are not an admin"
+    unless session[:admin]
+      flash[:notice] = "Access Denied"
       redirect_to(:controller => 'pages', :action => 'index')
       return false # halts the before_action
     else

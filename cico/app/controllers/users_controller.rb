@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   # Check the user is an admin
-  #before_action :confirm_admin
+  before_action :confirm_admin
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users

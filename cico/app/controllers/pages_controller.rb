@@ -5,7 +5,6 @@ class PagesController < ApplicationController
     end
 
     def my_items
-
     end
 
     def manage_content
