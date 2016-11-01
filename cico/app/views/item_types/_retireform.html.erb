@@ -1,12 +1,14 @@
 <%= form_for(@item_type) do |f| %>
   
-  <div class="field">
-    <%= f.label :retired_at %><br>
-    <%= f.datetime_select :retired_at %>
-  </div>
+  <div class="col-lg-6">
+  	<div class="form-group">
+  		<%= f.label :retired_at, class: "control-label" %>
+	  	<%= f.datetime_select :retired_at, class: "form-control" %>	
+	  </div> 
 
-  <div class="actions">
-    <%= f.submit %>
+	  <div class="form-group">
+	    <%= f.submit "Submit", class: "btn btn-default btn-success" %>
+	  </div>
   </div>
   
 <% end %>
