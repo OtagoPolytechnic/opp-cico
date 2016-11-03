@@ -23,7 +23,11 @@
         <td class="actions">
           <%= link_to("Show", item_type) %>
           <%= link_to("Edit", edit_item_type_path(item_type)) %>
-          <%= link_to('Retire') %>
+          <% if(item_type.retired_at == nil) %>
+            <%= link_to('Retire', { action: 'retire', id: item_type.id }) %>
+          <% else %>
+            <%= link_to('Unretire', { action: 'unretire', id: item_type.id }) %>
+          <% end %>
         </td>
       </tr>
     <% end %>
@@ -32,4 +36,6 @@
 
 <br>
 
-<%= link_to 'New item type', new_item_type_path, class: 'btn btn-success' %>
+<%= link_to new_item_type_path, class: 'btn btn-success' do %>
+  <span class="glyphicon glyphicon-plus"></span>&nbsp; New item type
+<% end %>

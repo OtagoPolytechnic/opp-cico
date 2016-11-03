@@ -1,0 +1,15 @@
+<h1>Unretire Item Item Type</h1>
+
+<br>
+
+<p>Are you sure you would like to unretire <%= @item_type.name %> ?</p>
+
+<br>
+
+<%= link_to({ :action => 'set_unretire', :id => @item_type.id, :unretire => 'yes' }, { :class => 'btn btn-success' }) do %>
+  <span class="glyphicon glyphicon-ok"></span>&nbsp; Yes
+<% end %>
+
+<%= link_to item_types_path, class: 'btn btn-danger' do %>
+  <span class="glyphicon glyphicon-remove"></span>&nbsp; No
+<% end %>

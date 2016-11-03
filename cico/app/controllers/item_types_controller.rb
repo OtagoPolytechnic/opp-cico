@@ -7,7 +7,7 @@ class ItemTypesController < ApplicationController
   # GET /item_types
   # GET /item_types.json
   def index
-    @item_types = ItemType.all
+    @item_types = ItemType.oldest_first
   end
 
   # GET /item_types/1
@@ -57,6 +57,35 @@ class ItemTypesController < ApplicationController
 
   def retire
     @item_type = set_item_type
+
+    # Checks if item type is already retired
+    if (@item_type.retired_at != nil)
+      redirect_to item_types_path, alert: 'Item type is already retired!'
+    end
+  end
+
+  def unretire
+    @item_type = set_item_type
+
+    # Checks if item type is already retired
+    if (@item_type.retired_at == nil)
+      redirect_to item_types_path, alert: 'Item type is already unretired!'
+    end
+  end
+
+  def set_unretire
+    @item_type = set_item_type
+
+    if (@item_type.retired_at != nil && params[:unretire] == 'yes')
+
+      @item_type.retired_at = nil
+
+      @item_type.save
+
+      redirect_to @item_type, notice: 'Item type was successfully unretired.'
+    else
+      redirect_to item_types_path, alert: 'There was an error!'
+    end
   end
 
   private

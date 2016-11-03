@@ -32,5 +32,11 @@
   </tbody>
 </table>
 
-<%= link_to 'Edit', edit_item_type_path(@item_type), class: 'btn btn-success' %>
-<%= link_to 'Back', item_types_path, class: 'btn btn-success' %>
+<%= link_to item_types_path, class: 'btn btn-primary' do %>
+  <span class="glyphicon glyphicon-chevron-left"></span>&nbsp; Back
+<% end %>
+
+
+<%= link_to edit_item_type_path(@item_type), class: 'btn btn-primary' do %>
+  <span class="glyphicon glyphicon-edit"></span>&nbsp; Edit
+<% end %>

@@ -1,35 +1,42 @@
-<%= form_for(@item_type) do |f| %>
-  <% if @item_type.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@item_type.errors.count, "error") %> prohibited this item_type from being saved:</h2>
+<% if @item_type.errors.any? %>
+  <div class="row" id="error_explanation">
+    <h2><%= pluralize(@item_type.errors.count, "error") %> prohibited this item_type from being saved:</h2>
 
-      <ul>
-      <% @item_type.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="col-lg-6">
-    <div class="form-group">
-      <%= f.label :name, class: "control-label" %>
-      <%= f.text_field :name, class: "form-control" %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :description, class: "control-label" %>
-      <%= f.text_area :description, class: "form-control" %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :notes, class: "control-label" %>
-      <%= f.text_area :notes, class: "form-control" %>
-    </div>
-
-    <div class="form-group">
-      <%= f.submit "Submit", class: "btn btn-default btn-success" %>
-    </div>
+    <ul>
+    <% @item_type.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
   </div>
-  
+<% end %>
+
+<%= form_for @item_type, :html => {:class => "form-horizontal"} do |f| %>
+
+    <div class="row">
+      <div class="form-group col-md-6">
+        <%= f.label :name, class: "control-label" %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-6">
+        <%= f.label :description, class: "control-label" %>
+        <%= f.text_area :description, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-6">
+        <%= f.label :notes, class: "control-label" %>
+        <%= f.text_area :notes, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-6">
+        <%= f.submit "Submit", class: "btn btn-default btn-success" %>
+      </div>
+    </div>
+
 <% end %>
