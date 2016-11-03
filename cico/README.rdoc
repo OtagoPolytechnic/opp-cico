@@ -1,28 +1,35 @@
-== README
+== Overview
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README will explain the steps you need to take to install a Ruby on Rails development enviroment on an Ubuntu 16.04 Xenial Xerus machine. These commands may also work on other versions of Linux but its not guaranteed.
 
-Things you may want to cover:
+The reason I recommend you develop on a Linux machine is because when you are ready to deploy your app to the internet, 99.9% of the time you will be running it on a Linux server. So it helps if you develop on Linux, that way it will be guaranteed to work on a Linux server.
 
-* Ruby version
+== Installing Ruby
 
-* System dependencies
+First we need to install some dependencies for Ruby.
 
-* Configuration
+  $ sudo apt-get update
+  $ sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
+  
+Next we will install Ruby using rbenv. Most people prefer using rbenv these days as it has the least issuses.
 
-* Database creation
+Installing with +rbenv+ is a simple two step process. First you install +rbenv+, and then +ruby-build+.
+  $ cd
+  $ git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+  $ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+  $ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+  $ exec $SHELL
 
-* Database initialization
+  $ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+  $ echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
+  $ exec $SHELL
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+  $ rbenv install 2.3.1
+  $ rbenv global 2.3.1
+  $ ruby -v
+  
+The last step is to install Bundler.
+  $ gem install bundler
+  
+rbenv users need to run the rehash command after installing bundler.
+  $ rbenv rehash
