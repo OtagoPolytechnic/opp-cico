@@ -18,6 +18,7 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
+    @item_types = ItemType.not_retired
   end
 
   # GET /items/1/edit
@@ -28,6 +29,7 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(item_params)
+    @item_types = ItemType.not_retired
 
     respond_to do |format|
       if @item.save

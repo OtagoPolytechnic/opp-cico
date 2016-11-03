@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   def confirm_admin
     unless session[:admin]
       flash[:notice] = "Access Denied"
-      redirect_to(:controller => 'pages', :action => 'index')
+      redirect_to(:controller => 'pages', :action => 'my_items')
       return false # halts the before_action
     else
       return true
