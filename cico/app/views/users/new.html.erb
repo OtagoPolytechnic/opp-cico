@@ -1,6 +1,11 @@
 <h1>New User</h1>
 
-<%= link_to 'Back', users_path, class: 'btn btn-success' %>
-
 <%= render 'form' %>
 
+<div class="row">
+	<div class="col-md-6">
+		<%= link_to users_path, class: 'btn btn-primary' do %>
+		  <span class="glyphicon glyphicon-chevron-left"></span>&nbsp; Back
+		<% end %>
+	</div>
+</div>
