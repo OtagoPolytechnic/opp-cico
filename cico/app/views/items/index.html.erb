@@ -34,4 +34,6 @@
 
 <br>
 
-<%= link_to 'New Item', new_item_path, class: 'btn btn-success' %>
+<%= link_to new_item_path, class: 'btn btn-success' do %>
+  <span class="glyphicon glyphicon-plus"></span>&nbsp; New item
+<% end %>

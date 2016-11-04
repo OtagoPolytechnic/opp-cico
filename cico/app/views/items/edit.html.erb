@@ -2,5 +2,14 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @item %> |
-<%= link_to 'Back', items_path %>
+<div class="row">
+	<div class="col-md-6">
+		<%= link_to items_path, class: 'btn btn-primary' do %>
+		  <span class="glyphicon glyphicon-chevron-left"></span>&nbsp; Back
+		<% end %>
+
+		<%= link_to @item, class: 'btn btn-primary' do %>
+		  <span class="glyphicon glyphicon glyphicon-search"></span>&nbsp; Show
+		<% end %>
+	</div>
+</div>
