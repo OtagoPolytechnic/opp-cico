@@ -25,7 +25,11 @@
         <td class="actions">
           <%= link_to("Show", item) %>
           <%= link_to("Edit", edit_item_path(item)) %>
-          <%= link_to('Retire') %>
+          <% if(item.retired_at == nil) %>
+            <%= link_to('Retire', { action: 'retire', id: item.id }) %>
+          <% else %>
+            <%= link_to('Unretire', { action: 'unretire', id: item.id }) %>
+          <% end %>
         </td>
       </tr>
     <% end %>

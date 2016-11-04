@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    @items = Item.oldest_first
   end
 
   # GET /items/1
@@ -56,13 +56,36 @@ class ItemsController < ApplicationController
     end
   end
 
-  # DELETE /items/1
-  # DELETE /items/1.json
-  def destroy
-    @item.destroy
-    respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
-      format.json { head :no_content }
+    def retire
+    @item = set_item
+
+    # Checks if item is already retired
+    if (@item.retired_at != nil)
+      redirect_to item_path, alert: 'Item is already retired!'
+    end
+  end
+
+  def unretire
+    @item = set_item
+
+    # Checks if item is already retired
+    if (@item.retired_at == nil)
+      redirect_to item_path, alert: 'Item is already unretired!'
+    end
+  end
+
+  def set_unretire
+    @item = set_item
+
+    if (@item.retired_at != nil && params[:unretire] == 'yes')
+
+      @item.retired_at = nil
+
+      @item.save
+
+      redirect_to @item, notice: 'Item was successfully unretired.'
+    else
+      redirect_to item_path, alert: 'There was an error!'
     end
   end
 
