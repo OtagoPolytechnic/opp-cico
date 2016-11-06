@@ -1,87 +1,28 @@
-== Overview
+== README
 
-This README will explain the steps you need to take to install a Ruby on Rails development enviroment on an Ubuntu 16.04 Xenial Xerus machine. These commands may also work on other versions of Linux but its not guaranteed.
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-The reason I recommend you develop on a Linux machine is because when you are ready to deploy your app to the internet, 99.9% of the time you will be running it on a Linux server. So it helps if you develop on Linux, that way it will be guaranteed to work on a Linux server.
+Things you may want to cover:
 
-== Installing Ruby
+* Ruby version
 
-First we need to install some dependencies for Ruby.
+* System dependencies
 
-  sudo apt-get update
-  sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
-  
-Next we will install Ruby using rbenv. Most people prefer using rbenv these days as it has the least issuses.
+* Configuration
 
-Installing with +rbenv+ is a simple two step process. First you install +rbenv+, and then +ruby-build+.
-  
-  cd
-  git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-  echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-  exec $SHELL
+* Database creation
 
-  git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-  echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
-  exec $SHELL
+* Database initialization
 
-  rbenv install 2.3.1
-  rbenv global 2.3.1
-  ruby -v
-  
-The last step is to install Bundler.
-  
-  gem install bundler
-  
-rbenv users need to run the rehash command after installing bundler.
-  
-  rbenv rehash
-  
-== Configuring Git
+* How to run the test suite
 
-Using Git is an essential part of developing and every developer should have this skill nailed down. If you don't have a GitHub account, make sure you register here[https://github.com/join?source=header-home].
+* Services (job queues, cache servers, search engines, etc.)
 
-Replace my name and email address in the following steps with the ones you used for your Github account.
-  
-  git config --global color.ui true
-  git config --global user.name "YOUR NAME"
-  git config --global user.email "YOUR@EMAIL.com"
-  ssh-keygen -t rsa -b 4096 -C "YOUR@EMAIL.com"
+* Deployment instructions
 
-Next we want to take the newly generated SSH key and add it to your GitHub account. This will allow you to use SSH to pull and push your repoistory. You want to copy and paste the output of the following command and paste it here[https://github.com/settings/ssh].
+* ...
 
-  cat ~/.ssh/id_rsa.pub
 
-Run this command to see if it worked.
-  
-  ssh -T git@github.com
-  
-You should get this message.
-  
-  Hi AstinT! You've successfully authenticated, but GitHub does not provide shell access.
-  
-== Installing Rails
-
-The next step is to install a JavaScript runtime like NodeJS that will allow us to use Coffeescript and the Asset Pipeline in Rails.
-
-To install NodeJS, we're going to add it using the official repository.
-
-  curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
-  sudo apt-get install -y nodejs
-  
-Install Rails
-
-  gem install rails -v 4.2.6
-
-rbenv users need to run the rehash command again to make the rails executable avaliable.
-  
-  rbenv rehash
-  
-We can easily check everything has been installed correctly by running this command.
-
-  rails -v
-  # Rails 4.2.6
-  
-If you get a different result for some reason, it means your environment may not be setup properly.
-  
-
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
