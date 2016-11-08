@@ -1,12 +1,13 @@
 <%= form_for @item, :html => {:class => "form-horizontal"} do |f| %>
-  
-  <div class="col-lg-6">
-  	<div class="form-group">
+	<div class="row">
+		<div class="form-group col-lg-6">
   		<%= f.label :retired_at, class: "control-label" %>
 	  	<%= f.date_select :retired_at, { :order => [:day, :month, :year] }, {:class => "form-control"} %>
-	  </div> 
+	  </div>
+  </div>
 
-	  <div class="form-group">
+  <div class="row">
+	  <div class="form-group col-lg-6">
 	    <%= f.submit "Submit", class: "btn btn-default btn-success" %>
 	  </div>
   </div>
