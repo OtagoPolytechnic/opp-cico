@@ -1,7 +1,9 @@
 class Item < ActiveRecord::Base
 	
+	# Relationships
 	has_one :item_type
 	has_many :checkouts
+	has_many :users, through: :check_outs
 
 	# Scopes
 	scope :retired, lambda { where.not(:retired_at => nil) }

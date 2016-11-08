@@ -1,8 +1,13 @@
 class CheckOut < ActiveRecord::Base
 	
-	has_many :items
-	has_many :users
+	# Relationships
+	belongs_to :items
+	belongs_to :users
 
-	
+	# Scopes
+
+	# Validations
+	validates_presence_of :item_id
+	validates_presence_of :user_id
 	
 end
