@@ -4,8 +4,8 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>User ID</th>
-      <th>Item ID</th>
+      <th>Username</th>
+      <th>Item Name</th>
       <th>Issue Date</th>
       <th>Return Date</th>
       <th>Actions</th>
@@ -16,8 +16,8 @@
     <% @check_outs.each do |check_out| %>
     <tr>
       <td><%= check_out.id %></td>
-      <td><%= check_out.user_id %></td>
-      <td><%= check_out.item_id %></td>
+      <td><%= check_out.user.username %></td>
+      <td><%= check_out.item.name %></td>
       <td><%= check_out.created_at.strftime('%Y-%m-%d') %></td>
       <td><%= check_out.returned_at %></td>
       <td class="actions">
