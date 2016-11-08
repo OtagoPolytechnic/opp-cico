@@ -54,13 +54,12 @@ class CheckOutsController < ApplicationController
     end
   end
 
-  # DELETE /check_outs/1
-  # DELETE /check_outs/1.json
-  def destroy
-    @check_out.destroy
-    respond_to do |format|
-      format.html { redirect_to check_outs_url, notice: 'Check out was successfully destroyed.' }
-      format.json { head :no_content }
+  def return
+    @check_out = set_check_out
+
+    # Checks if item is already retired
+    if (@check_out.returned_at != nil)
+      redirect_to check_out_path, alert: 'Check out already returned!'
     end
   end
 
@@ -72,6 +71,6 @@ class CheckOutsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def check_out_params
-      params.require(:check_out).permit(:item_id, :user_id)
+      params.require(:check_out).permit(:item_id, :user_id, :returned_at)
     end
 end

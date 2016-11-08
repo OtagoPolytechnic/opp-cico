@@ -1,2 +1,42 @@
-<%= link_to 'Edit', edit_check_out_path(@check_out) %> |
-<%= link_to 'Back', check_outs_path %>
+<h1>Check Out ID: <%= @check_out.id %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Check Out Data</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td>ID:</td>
+        <td><%= @check_out.id %></td>
+      </tr>
+      <tr>
+        <td>User ID:</td>
+        <td><%= @check_out.user_id %></td>
+      </tr>
+      <tr>
+        <td>Item ID:</td>
+        <td><%= @check_out.item_id %></td>
+      </tr>
+      <tr>
+        <td>Issue Date:</td>
+        <td><%= @check_out.created_at %></td>
+      </tr>
+      <tr>
+        <td>Return Date:</td>
+        <td><%= @check_out.returned_at %></td>
+      </tr>
+  </tbody>
+</table>
+
+<%= link_to check_outs_path, class: 'btn btn-primary' do %>
+  <span class="glyphicon glyphicon-chevron-left"></span>&nbsp; Back
+<% end %>
+
+
+<%= link_to edit_check_out_path(@check_out), class: 'btn btn-primary' do %>
+  <span class="glyphicon glyphicon-edit"></span>&nbsp; Edit
+<% end %>

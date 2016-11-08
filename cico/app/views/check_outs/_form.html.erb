@@ -1,25 +1,35 @@
-<%= form_for(@check_out) do |f| %>
-  <% if @check_out.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@check_out.errors.count, "error") %> prohibited this check_out from being saved:</h2>
+<% if @check_out.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@check_out.errors.count, "error") %> prohibited this check_out from being saved:</h2>
 
-      <ul>
-      <% @check_out.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= f.collection_select(:item_id, Item.all, :id, :name) %>
-  </div><br />
-
-  <div>
-    <%= f.collection_select(:user_id, User.all, :id, :username) %>
-  </div><br />
-
-  <div class="actions">
-    <%= f.submit %>
+    <ul>
+    <% @check_out.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
   </div>
+<% end %>
+
+<%= form_for @check_out, :html => {:class => "form-horizontal"} do |f| %>
+  
+  <div class="row">
+    <div class="form-group col-lg-6">
+      <%= f.label :item_id, class: "control-label" %>
+      <%= f.collection_select(:item_id, Item.all, :id, :name, { :prompt => true }, { class: "form-control"}) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-lg-6">
+      <%= f.label :user_id, class: "control-label" %>
+      <%= f.collection_select(:user_id, User.all, :id, :username , { :prompt => true }, { class: "form-control"}) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-lg-6">
+      <%= f.submit "Submit", class: "btn btn-default btn-success" %>
+    </div>
+  </div>
+  
 <% end %>
