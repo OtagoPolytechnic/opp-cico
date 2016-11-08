@@ -3,15 +3,19 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Asset num</th>
-      <th>Notes</th>
-      <th>Retired at</th>
+      <th>Item Name</th>
+      <th>Issue Date</th>
+      <th>Return Date</th>
     </tr>
   </thead>
 
   <tbody>
-
+    <% @my_items.each do |my_item| %>
+      <tr>
+        <td><%= my_item.item.name %></td>
+        <td><%= my_item.created_at.strftime('%Y-%m-%d') %></td>
+        <td><%= my_item.returned_at %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
