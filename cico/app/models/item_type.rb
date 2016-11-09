@@ -1,5 +1,6 @@
 class ItemType < ActiveRecord::Base
 	
+	# Relationships
 	has_many :items
 
 	# Scopes

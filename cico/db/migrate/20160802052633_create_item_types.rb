@@ -1,5 +1,6 @@
 class CreateItemTypes < ActiveRecord::Migration
   
+  # Creates the item_types table
   def up
     create_table :item_types do |t|
       t.string :name, :limit => 50, :null => false
@@ -11,6 +12,7 @@ class CreateItemTypes < ActiveRecord::Migration
     end
   end
 
+  # Drops the item_types table
   def down
   	drop_table :item_types
   end

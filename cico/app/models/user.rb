@@ -1,7 +1,12 @@
 class User < ActiveRecord::Base
 
+	# Relationships
 	has_many :check_outs
 	has_many :items, through: :check_outs
+
+	# Scopes
+	scope :oldest_first, lambda { order("users.created_at ASC") }
+	scope :newest_first, lambda { order("users.created_at DESC") }
 
 	# Validatons
 	EMAIL_REGEX = /\A[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}\Z/i

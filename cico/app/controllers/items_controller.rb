@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
-    @item_types = ItemType.not_retired
+    @items = Item.CheckOut.where(returned_at: !nil)
   end
 
   # GET /items/1/edit

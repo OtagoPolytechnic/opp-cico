@@ -7,7 +7,7 @@ class CheckOutsController < ApplicationController
   # GET /check_outs
   # GET /check_outs.json
   def index
-    @check_outs = CheckOut.all
+    @check_outs = CheckOut.oldest_first
   end
 
   # GET /check_outs/1

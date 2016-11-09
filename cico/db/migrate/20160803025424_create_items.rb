@@ -1,5 +1,6 @@
 class CreateItems < ActiveRecord::Migration
   
+  # Creates the items table
   def up
     create_table :items do |t|
       t.integer :item_type_id, :null => false
@@ -14,6 +15,7 @@ class CreateItems < ActiveRecord::Migration
     add_index("items", "item_type_id")
   end
 
+  # Drops the items table
   def down
     drop_table :items
   end
