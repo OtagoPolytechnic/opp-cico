@@ -1,3 +1,4 @@
+<!-- Unretire item page -->
 <h1>Unretire Item</h1>
 
 <br>
@@ -6,10 +7,12 @@
 
 <br>
 
+<!-- Yes button -->
 <%= link_to({ :action => 'set_unretire', :id => @item.id, :unretire => 'yes' }, { :class => 'btn btn-success' }) do %>
   <span class="glyphicon glyphicon-ok"></span>&nbsp; Yes
 <% end %>
 
+<!-- No button -->
 <%= link_to item_path, class: 'btn btn-danger' do %>
   <span class="glyphicon glyphicon-remove"></span>&nbsp; No
 <% end %>

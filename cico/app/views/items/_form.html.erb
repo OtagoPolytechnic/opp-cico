@@ -1,3 +1,4 @@
+<!-- Errors for items form -->
 <% if @item.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
@@ -10,8 +11,10 @@
   </div>
 <% end %>
 
+<!-- Items form -->
 <%= form_for @item, :html => {:class => "form-horizontal"} do |f| %>
 
+  <!-- Text field for name -->
   <div class="row">
     <div class="form-group col-lg-6">
       <%= f.label :name, class: "control-label" %>
@@ -19,6 +22,7 @@
     </div>
   </div>
 
+  <!-- Text field for price -->
   <div class="row">
     <div class="form-group col-lg-6"">
       <%= f.label :price, class: "control-label" %>
@@ -26,6 +30,7 @@
     </div>
   </div>
 
+  <!-- Text field for asset num -->
   <div class="row">
     <div class="form-group col-lg-6"">
       <%= f.label :asset_num, class: "control-label" %>
@@ -33,6 +38,7 @@
     </div>
   </div>
 
+  <!-- Text area for notes -->
   <div class="row">
     <div class="form-group col-lg-6"">
       <%= f.label :notes, class: "control-label" %>
@@ -40,6 +46,7 @@
     </div>
   </div>
 
+  <!-- Select for item type -->
   <div class="row">
     <div class="form-group col-lg-6"">
       <%= f.label :item_type, class: "control-label" %>
@@ -47,6 +54,7 @@
     </div>
   </div>
 
+  <!-- Submit button -->
   <div class="row">
     <div class="form-group col-lg-6"">
       <%= f.submit "Submit", class: "btn btn-default btn-success" %>

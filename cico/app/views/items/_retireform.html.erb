@@ -1,5 +1,7 @@
+<!-- Form for submitting a retire date -->
 <%= form_for @item, :html => {:class => "form-horizontal"} do |f| %>
 
+	<!-- Select for retire date -->
 	<div class="row">
 		<div class="form-group col-lg-6">
 			<%= f.label :retired_at, class: "control-label" %>
@@ -7,6 +9,7 @@
 	  	</div>
   	</div>
 
+  	<!-- Submit button -->
   	<div class="row">
 		<div class="form-group col-lg-6">
 	    	<%= f.submit "Submit", class: "btn btn-default btn-success" %>
