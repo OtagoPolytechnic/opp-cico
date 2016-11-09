@@ -55,6 +55,7 @@ class ItemTypesController < ApplicationController
     end
   end
 
+  # Retire form
   def retire
     @item_type = set_item_type
 
@@ -64,31 +65,39 @@ class ItemTypesController < ApplicationController
     end
   end
 
+  # Unretire form
   def unretire
     @item_type = set_item_type
 
-    # Checks if item type is already retired
+    # Checks if item type is already unretired
     if (@item_type.retired_at == nil)
       redirect_to item_types_path, alert: 'Item type is already unretired!'
     end
   end
 
+  # Sets item type to unretired
   def set_unretire
     @item_type = set_item_type
 
+    # Checks if item_type retired at is not nil and unretire is yes
     if (@item_type.retired_at != nil && params[:unretire] == 'yes')
 
+      # Unset retire date
       @item_type.retired_at = nil
 
+      # Save item_type
       @item_type.save
 
+      # Redirects to item_type show page
       redirect_to @item_type, notice: 'Item type was successfully unretired.'
     else
+      # Redirects to item_types index
       redirect_to item_types_path, alert: 'There was an error!'
     end
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_item_type
       @item_type = ItemType.find(params[:id])
@@ -98,4 +107,5 @@ class ItemTypesController < ApplicationController
     def item_type_params
       params.require(:item_type).permit(:name, :description, :notes, :retired_at)
     end
+
 end

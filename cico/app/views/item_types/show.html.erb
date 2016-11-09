@@ -1,5 +1,7 @@
+<!-- Show item type page -->
 <h1><%= @item_type.name %></h1>
 
+<!-- Shows individual information about an item type -->
 <table>
   <thead>
     <tr>
@@ -32,11 +34,12 @@
   </tbody>
 </table>
 
+<!-- Back button -->
 <%= link_to item_types_path, class: 'btn btn-primary' do %>
   <span class="glyphicon glyphicon-chevron-left"></span>&nbsp; Back
 <% end %>
 
-
+<!-- Edit button for current item type -->
 <%= link_to edit_item_type_path(@item_type), class: 'btn btn-primary' do %>
   <span class="glyphicon glyphicon-edit"></span>&nbsp; Edit
 <% end %>

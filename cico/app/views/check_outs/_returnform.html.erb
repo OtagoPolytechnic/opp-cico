@@ -1,5 +1,7 @@
+<!-- Form for submitting return date -->
 <%= form_for @check_out, :html => {:class => "form-horizontal"} do |f| %>
 	
+	<!-- Select for return date -->
 	<div class="row">
   		<div class="form-group col-lg-6">
   			<%= f.label :returned_at, class: "control-label" %>
@@ -7,6 +9,7 @@
 		</div>
 	</div>
 
+	<!-- Submit button -->
 	<div class="row">
 		<div class="form-group col-lg-6">
 			<%= f.submit "Submit", class: "btn btn-default btn-success" %>

@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
 
 	validates_length_of :password, :maximum => 25
 
-	#I would normally put this at the top but the error appears in the list nicer
+	# I would normally put this at the top but the error appears in the list nicer
 	# Used for the bcrypt gem
 	has_secure_password
 

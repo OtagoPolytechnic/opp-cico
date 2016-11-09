@@ -1,5 +1,7 @@
+<!-- Show check out page -->
 <h1>Check Out ID: <%= @check_out.id %></h1>
 
+<!-- Shows individual information about a check out -->
 <table>
   <thead>
     <tr>
@@ -32,11 +34,12 @@
   </tbody>
 </table>
 
+<!-- Back button -->
 <%= link_to check_outs_path, class: 'btn btn-primary' do %>
   <span class="glyphicon glyphicon-chevron-left"></span>&nbsp; Back
 <% end %>
 
-
+<!-- Edit button for current check out -->
 <%= link_to edit_check_out_path(@check_out), class: 'btn btn-primary' do %>
   <span class="glyphicon glyphicon-edit"></span>&nbsp; Edit
 <% end %>

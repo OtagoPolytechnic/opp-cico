@@ -54,16 +54,18 @@ class CheckOutsController < ApplicationController
     end
   end
 
+  # Return form
   def return
     @check_out = set_check_out
 
-    # Checks if item is already retired
+    # Checks if check_out is already returned
     if (@check_out.returned_at != nil)
       redirect_to check_out_path, alert: 'Check out already returned!'
     end
   end
 
   private
+    
     # Use callbacks to share common setup or constraints between actions.
     def set_check_out
       @check_out = CheckOut.find(params[:id])
@@ -73,4 +75,5 @@ class CheckOutsController < ApplicationController
     def check_out_params
       params.require(:check_out).permit(:item_id, :user_id, :returned_at)
     end
+
 end

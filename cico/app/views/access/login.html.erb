@@ -1,9 +1,12 @@
+<!-- Login Page -->
 <div class="form">
 
   <h1>Welcome to Cico</h1>
 
+  <!-- Flash messages -->
   <%= flash_messages %>
   
+  <!-- Login form -->
   <%= form_tag({:action => 'attempt_login'}, class: "login-form") do %>
     
     <%= text_field_tag(:username, nil, :placeholder => "username") %>
